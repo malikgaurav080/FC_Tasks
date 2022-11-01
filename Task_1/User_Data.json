@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "Username": "Gaurav",
+      "Email": "malikgaurav080@gmail.com",
+      "Phone-NO": "8791034774",
+      "Age": "21",
+      "Gender": "Male",
+      "Country": "India",
+      "State": "UP",
+      "City": "Bareilly",
+      "Pin-Code": "243123",
+      "Password": 1122
+    },
+    {
+      "Username": "Gaurav",
+      "Email": "malikgaurav080@gmail.com",
+      "Phone-NO": "+918791034774",
+      "Age": "23",
+      "Gender": "on",
+      "Country": "India",
+      "State": "Uttar Pradesh",
+      "City": "Bareilly",
+      "Pin-Code": "243123",
+      "Password": "1122",
+      "id": 2
+    },
+    {
+      "Username": "Anuj",
+      "Email": "anuj@123",
+      "Phone-NO": "778899",
+      "Age": "20",
+      "Gender": "on",
+      "Country": "Ind",
+      "State": "UP",
+      "City": "bareilly",
+      "Pin-Code": "1122",
+      "Password": "55555",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+<!--
+Author: Colorlib
+Author URL: https://colorlib.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>SignUp Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="./style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+</head>
+<script>
+
+function save(){
+        var username=document.getElementById("Username").value;
+        var email=document.getElementById("email").value;
+        var phone=document.getElementById("phone").value;
+        var gender=document.getElementById("gender").value;
+        var country=document.getElementById("country").value;
+        var state=document.getElementById("state").value;
+        var city=document.getElementById("city").value;
+        var pin=document.getElementById("pin").value;
+        var password=document.getElementById("password").value;
+        var age=document.getElementById("age").value;
+
+
+
+        fetch("http://localhost:3000/users",{
+            method:"POST",
+            body:JSON.stringify({"Username":username,"Email":email,
+            "Phone-NO":phone,"Age":age,
+            "Gender":gender,"Country":country,
+            "State":state,"City":city,
+            "Pin-Code":pin,"Password":password}),
+            headers:{
+                'Content-Type':'application/json'
+            }
+    }).then(Response => Response.json())
+    .then(Response => {console.log("Data added successfully")});
+}
+
+
+
+</script>
+<body>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1>SignUp Form</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<div>
+					<input class="text" type="text" id="Username" placeholder="Username" required="">
+					<input class="text email" type="text" id="email" placeholder="Email" required="">
+                    <input class="text email" type="text" id="phone" placeholder="Phone" required="">
+                    
+                    Select Gender: 
+                    <input  type="radio" id="gender" name="inlineRadioOptions" >Male
+                    <input  type="radio" id="gender" name="inlineRadioOptions" >Female
+                    <input  type="radio" id="gender" name="inlineRadioOptions">Other
+
+                    
+                    <input class="text email" type="text" id="age" placeholder="Age" required="">
+                    <input class="text email" type="text" id="country" placeholder="Country" required="">
+                    <input class="text email" type="text" id="state" placeholder="Stae" required="">
+                    <input class="text email" type="text" id="city" placeholder="City" required="">
+                    <input class="text email" type="text" id="pin" placeholder="Pin-Code" required="">
+                    
+
+					<input class="text" type="password" id="password" placeholder="Password" required="">
+					<input class="text w3lpass" type="password" id="password" placeholder="Confirm Password" required="">
+					<div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>I Agree To The Terms & Conditions</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					<input type="submit" value="SIGNUP" onclick="save()">
+            
+                    
+				</div>
+				<p>Don't have an Account? <a href="login.html"> Login Now!</a></p>
+			</div>
+		</div>
+		<!-- copyright -->
+		<div class="colorlibcopy-agile">
+			<p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p>
+		</div>
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+</body>
+</html>
