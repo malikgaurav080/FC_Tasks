@@ -9,20 +9,14 @@ function submit(){
         'Content-Type':'application/json'
       }
     }).then(response=>response.json())
-     .then(response=>
-     {
-        // console.log(response)
-
-        for(let d of response){
-            if(d.Email == email && d.Phone-No == number && d.City == city){
-                alert("User Verifed!!");
-                // alert("This is your Password: "+ d.Password);
+    .then(json=>{
+        json.map(data=>{
+            if(data.Email==email && data.Phone-NO==number && data.City==city){
+                alert("your password: ",data.Password);
+                flag = 1
                 return
-
-            }
-            alert("User Not Verified!!")
-            return
-            
-        }
+            }})
+        if(flag==0)
+        alert("Wrong Details");
     });
 }

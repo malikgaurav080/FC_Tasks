@@ -1,6 +1,7 @@
 function save(){
     var email=document.getElementById("email").value;
     var pass=document.getElementById("password").value;
+    var flag = 0;
     
     fetch("http://localhost:3000/users",{
         method:"GET",
@@ -8,20 +9,16 @@ function save(){
         'Content-Type':'application/json'
       }
     }).then(response=>response.json())
-     .then(response=>
-     {
-        // console.log(response)
-        // save response in a local variable/array and compare creditionals outside the fetch 
-        for(let d of response){
-            if(d.Email == email && d.Password == pass){
-                alert("login successfully");
-                window.open("./index.html")
-                return
+    .then(json=>{
+        json.map(data=>{
 
-            }
-            alert("wrong Details!!")
-            return
-            
-        }
-    });
+            if(data.Email==email && data.Password==pass){
+                alert("User verified")
+                window.open("./index.html")
+                flag = 1
+                return
+            }})
+        if(flag==0)
+        alert("User not Verified")
+    })
 }

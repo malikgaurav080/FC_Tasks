@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+var arr = [];
+var arr1 = [];
+var flag = 0;
+
+fetch("http://localhost:3000/users")
+.then(response=>response.json())
+.then(json=>{
+    json.map(data=>{
+        // console.log(data.Email,data.Password)
+        // arr.push(data.Email)
+        // arr1.push(data.Password)
+        if(data.Email=="mansi@123" && data.Password=="8899"){
+            console.log("verified")
+            flag = 1
+            return
+        }
+            
+        
+    })
+    // console.log(arr)
+    // console.log(arr1)
+    if(flag==0)
+    console.log("not Verified")
+})
+
+
+</script>
+<body>
+
+    Welcome
+</body>
+</html>

@@ -11,33 +11,48 @@
       "State": "UP",
       "City": "Bareilly",
       "Pin-Code": "243123",
-      "Password": 1122
+      "Password": "1122"
     },
     {
-      "Username": "Gaurav",
-      "Email": "malikgaurav080@gmail.com",
-      "Phone-NO": "+918791034774",
-      "Age": "23",
+      "Username": "aman",
+      "Email": "aman@123",
+      "Phone-NO": "8864921652",
+      "Age": "24",
       "Gender": "on",
       "Country": "India",
-      "State": "Uttar Pradesh",
-      "City": "Bareilly",
-      "Pin-Code": "243123",
-      "Password": "1122",
-      "id": 2
+      "State": "UP",
+      "City": "Rampur",
+      "Pin-Code": "24312",
+      "Password": "3344",
+      "id": 3
     },
     {
-      "Username": "Anuj",
-      "Email": "anuj@123",
-      "Phone-NO": "778899",
-      "Age": "20",
+      "Username": "mansi",
+      "Email": "mansi@123",
+      "Phone-NO": "8923369292",
+      "Age": "18",
       "Gender": "on",
-      "Country": "Ind",
+      "Country": "India",
       "State": "UP",
-      "City": "bareilly",
-      "Pin-Code": "1122",
-      "Password": "55555",
-      "id": 3
+      "City": "Bareilly",
+      "Pin-Code": "243123",
+      "Password": "8899",
+      "id": 4
+    }
+  ],
+
+  "trans": [
+    {
+      "id": 1,
+      "Trans-id": "88754568",
+      "From-user": "Gaurav",
+      "To-user": "Aman",
+      "Date": "10/05/2022",
+      "Amount": "20000",
+      "Time": "9.45 AM",
+      "Status": "Success",
+      "Email": "malikgaurav080@gmail.com"
     }
   ]
+
 }

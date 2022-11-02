@@ -8,5 +8,9 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.2"
+  },
+  "devDependencies": {},
   "description": ""
 }

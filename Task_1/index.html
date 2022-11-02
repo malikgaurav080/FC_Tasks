@@ -4,10 +4,137 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
     <title>Trans Details</title>
+
 </head>
+<style>
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+font-size: 1rem;
+line-height: 2.15;
+padding-left: .75em;
+padding-right: .75em;
+}
+.card-registration .select-arrow {
+top: 13px;
+}
+
+</style>
+<script>
+
+    function savee(){
+            var trans_id=document.getElementById("tid").value;
+            var from_user=document.getElementById("fromuser").value;
+            var to_user=document.getElementById("touser").value;
+            var date=document.getElementById("date").value;
+            var amount=document.getElementById("amount").value;
+            var time=document.getElementById("time").value;
+            var status=document.getElementById("status").value;
+            var email=document.getElementById("email").value;
+
+
+
+
+            fetch("http://localhost:3000/trans",{
+                method:"POST",
+                body:JSON.stringify({"Trans-id":trans_id,"From-user":from_user,
+                "To-user":to_user,"Date":date,
+                "Amount":amount,"Time":time,
+                "Status":status,"Email":email}),
+                headers:{
+                    'Content-Type':'application/json'
+                }
+        }).then(Response => Response.json())
+        .then(Response => {console.log(Response)});
+        alert("Data Added Successfully")
+    }
+
+
+</script>
 <body>
-    <h1>Welcome</h1>
+
+    <section class="h-100 bg-dark">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card card-registration my-4">
+                <div class="row g-0">
+                  <div class="col-xl-6 d-none d-xl-block">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                      alt="Sample photo" class="img-fluid"
+                      style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="card-body p-md-5 text-black">
+                      <h3 class="mb-5 text-uppercase">Transactions Details</h3>
+      
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input type="text" id="tid" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example1m">Trans-Id: </label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input type="text" id="formuser" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example1n">From-User:</label>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="row">
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input type="text" id="touser" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example1m1">To-User: </label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                          <div class="form-outline">
+                            <input type="text" id="date" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Example1n1">Date</label>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="form-outline mb-4">
+                        <input type="text" id="amount" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example8">Amount</label>
+                      </div>
+      
+
+      
+                      <div class="form-outline mb-4">
+                        <input type="text" id="time" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example90">Time</label>
+                      </div>
+      
+                      <div class="form-outline mb-4">
+                        <input type="text" id="status" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example99">Status</label>
+                      </div>
+      
+                      <div class="form-outline mb-4">
+                        <input type="text" id="email" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example97">Email ID</label>
+                      </div>
+      
+                      <div class="d-flex justify-content-end pt-3">
+                        <button type="button" class="btn btn-warning btn-lg ms-2" onclick="savee()">Submit form</button>
+                      </div>
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     
 </body>
 </html>

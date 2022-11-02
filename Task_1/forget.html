@@ -19,10 +19,11 @@
 </head>
 <script>
 
-function reset_Pass(){
+function sub(){
     var email=document.getElementById("email").value;
     var number=document.getElementById("number").value;
     var city=document.getElementById("city").value;
+    flag=0;
     
     fetch("http://localhost:3000/users",{
         method:"GET",
@@ -30,21 +31,15 @@ function reset_Pass(){
         'Content-Type':'application/json'
       }
     }).then(response=>response.json())
-     .then(response=>
-     {
-        // console.log(response)
-
-        for(let a of response){
-            if(a.Email == email && a.Phone-No == number && a.City == city){
-                alert("User Verifed!!");
-                // alert("This is your Password: "+ a.Password);
+    .then(json=>{
+        json.map(data=>{
+            if(data.Email==email && data.Phone-NO==number && data.City==city){
+                alert("your password: ",data.Password);
+                flag = 1
                 return
-
-            }
-            alert("User Not Verified!!")
-            return
-            
-        }
+            }})
+        if(flag==0)
+        alert("Wrong Details");
     });
 }
 
@@ -74,7 +69,7 @@ function reset_Pass(){
                   <label class="form-label" for="form3Example3">Email address</label>
                 </div>
       
-                <!-- Password input -->
+                <!-- Phone input -->
                 <div class="form-outline mb-3">
                   <input type="text" id="number" class="form-control form-control-lg"
                     placeholder="Enter Phone-Number" />
@@ -89,7 +84,7 @@ function reset_Pass(){
 
 
                 <div class="text-center text-lg-start mt-4 pt-2">
-                  <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" onclick="reset_Pass()">Submit</button>
+                  <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" onclick="sub()">Submit</button>
                   <p class="small fw-bold mt-2 pt-1 mb-0">Go to Login Page <a href="login.html" class="link-danger">Login</a></p>
                   <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="signup.html" class="link-danger">Register</a></p>
                 </div>
