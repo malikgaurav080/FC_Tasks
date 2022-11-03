@@ -1,0 +1,49 @@
+Assignemnts:
+			===========
+
+			HTML5 AND CSS3:
+			---------------
+			-> SignUp Form
+			-> Login Form
+			-> Home Page or Dashboard
+
+			   =============================================================
+			   Home   Users   Transactions                            Logout
+
+						
+
+			  Users Page(Data Table in jquery with search) => Should list all users with edit and delete Option.
+
+			  Transactions Page (Data Table in jquery with search) => User Should enter all trasanction details.
+
+			JSON-SERVER:
+			===========
+				users-data.json
+				const users-data = {
+							userid:
+							username:
+							password:
+							email:
+							phone:		
+							gender:
+							age:
+							city:
+							state:
+							pincode:
+							country:
+						  }
+
+
+			   const transactions = {
+
+					         transactionId:
+						 fromUser:			
+						 toUser:
+						 transaction amount:
+						 transaction date:
+						 transaction time:
+						 transacation status:
+
+						}
+
+				
