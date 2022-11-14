@@ -33,7 +33,7 @@ function sub(){
     }).then(response=>response.json())
     .then(json=>{
         json.map(data=>{
-            if(data.Email==email && data.Phone-NO==number && data.City==city){
+            if(data.Email==email && data.PhoneNO==number && data.City==city){
                 alert("your password: ",data.Password);
                 flag = 1
                 return

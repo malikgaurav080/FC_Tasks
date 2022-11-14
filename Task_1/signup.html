@@ -37,10 +37,10 @@ function save(){
         fetch("http://localhost:3000/users",{
             method:"POST",
             body:JSON.stringify({"Username":username,"Email":email,
-            "Phone-NO":phone,"Age":age,
+            "PhoneNO":phone,"Age":age,
             "Gender":gender,"Country":country,
             "State":state,"City":city,
-            "Pin-Code":pin,"Password":password}),
+            "PinCode":pin,"Password":password}),
             headers:{
                 'Content-Type':'application/json'
             }
